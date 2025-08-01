@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { createContext,useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -9,6 +9,7 @@ import data from './data.jsx';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './routes/Detail.jsx';
 import axios from 'axios';
+import Cart from './routes/Cart.jsx';
 
 
 
@@ -72,6 +73,7 @@ function App() {
           </>
         } />
         <Route path="/detail/:id" element={<Detail shoes={shoes} ></Detail>} />
+        <Route path="/cart" element={ <Cart/>}/>
         <Route path="/about" element={<About></About>} >
           <Route path="member" element={<div>멤버</div>} />
           <Route path="location" element={<About></About>} />
